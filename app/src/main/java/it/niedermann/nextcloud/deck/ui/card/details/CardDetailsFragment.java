@@ -176,7 +176,8 @@ public class CardDetailsFragment extends Fragment implements CardDueDateView.Due
             registerEditorListener(binding.descriptionViewer);
         } else {
             binding.descriptionEditor.setEnabled(false);
-            binding.descriptionEditorWrapper.setVisibility(GONE);
+            binding.descriptionEditorWrapper.setVisibility(VISIBLE);
+            binding.descriptionViewer.setEnabled(false);
             binding.descriptionViewer.setVisibility(VISIBLE);
 
             viewModel.descriptionChangedFromExternal().observe(getViewLifecycleOwner(), description -> {
