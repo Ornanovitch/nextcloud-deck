@@ -175,7 +175,7 @@ public class CardDetailsFragment extends Fragment implements CardDueDateView.Due
             registerEditorListener(binding.descriptionEditor);
             registerEditorListener(binding.descriptionViewer);
         } else {
-            binding.descriptionViewer.setMarkdownString(viewModel.getFullCard().getCard().getDescription());
+            // binding.descriptionViewer.setMarkdownString(viewModel.getFullCard().getCard().getDescription());
             binding.descriptionEditor.setEnabled(false);
             binding.descriptionEditorWrapper.setVisibility(GONE);
             binding.descriptionViewer.setEnabled(false);
@@ -185,7 +185,7 @@ public class CardDetailsFragment extends Fragment implements CardDueDateView.Due
                 binding.descriptionViewer.setMarkdownString(description);
             });
 
-            registerEditorListener(binding.descriptionViewer);
+            // registerEditorListener(binding.descriptionViewer);
         }
     }
 
