@@ -180,22 +180,10 @@ public class CardDetailsFragment extends Fragment implements CardDueDateView.Due
             binding.descriptionEditor.setMarkdownString(viewModel.getFullCard().getCard().getDescription());
             binding.descriptionViewer.setMarkdownString(viewModel.getFullCard().getCard().getDescription());
 
-            viewModel.getDescriptionMode().observe(getViewLifecycleOwner(), (isPreviewMode) -> {
-                if (isPreviewMode) {
-                    toggleEditorView(binding.descriptionViewer, binding.descriptionEditorWrapper, binding.descriptionViewer);
-                    binding.descriptionToggle.setImageResource(R.drawable.ic_edit_24dp);
-                } else {
-                    toggleEditorView(binding.descriptionEditorWrapper, binding.descriptionViewer, binding.descriptionEditor);
-                    binding.descriptionToggle.setImageResource(R.drawable.ic_eye_24);
-                }
-            });
-
             viewModel.descriptionChangedFromExternal().observe(getViewLifecycleOwner(), description -> {
                 binding.descriptionEditor.setMarkdownString(description);
                 binding.descriptionViewer.setMarkdownString(description);
             });
-
-            binding.descriptionToggle.setOnClickListener((v) -> viewModel.toggleDescriptionPreviewMode());
 
             registerEditorListener(binding.descriptionEditor);
             registerEditorListener(binding.descriptionViewer);
