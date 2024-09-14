@@ -175,7 +175,6 @@ public class CardDetailsFragment extends Fragment implements CardDueDateView.Due
             registerEditorListener(binding.descriptionEditor);
             registerEditorListener(binding.descriptionViewer);
         } else {
-            binding.descriptionViewer.setMovementMethod(LinkMovementMethod.getInstance());
             binding.descriptionViewer.setMarkdownString(viewModel.getFullCard().getCard().getDescription());
 
             binding.descriptionEditor.setEnabled(false);
