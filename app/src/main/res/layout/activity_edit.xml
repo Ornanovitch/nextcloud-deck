@@ -25,6 +25,7 @@
                 android:importantForAutofill="no"
                 android:inputType="textMultiLine"
                 android:maxLines="5"
+                android:textColor="?attr/colorOnSurface"
                 tools:text="@tools:sample/lorem" />
 
         </com.google.android.material.appbar.MaterialToolbar>
