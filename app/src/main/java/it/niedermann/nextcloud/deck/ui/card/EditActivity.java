@@ -289,7 +289,7 @@ public class EditActivity extends AppCompatActivity {
 
         utils.platform.themeStatusBar(this);
         utils.material.themeToolbar(binding.toolbar);
-        utils.material.colorTextInputLayout(binding.title);
+        utils.platform.colorTextView(binding.title, ColorRole.ON_SURFACE);
         utils.material.themeTabLayoutOnSurface(binding.tabLayout);
     }
 
