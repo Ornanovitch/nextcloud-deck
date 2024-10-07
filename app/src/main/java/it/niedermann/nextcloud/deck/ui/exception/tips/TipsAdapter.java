@@ -23,7 +23,7 @@ import com.nextcloud.android.sso.exceptions.NextcloudFilesAppNotSupportedExcepti
 import com.nextcloud.android.sso.exceptions.NextcloudHttpRequestFailedException;
 import com.nextcloud.android.sso.exceptions.TokenMismatchException;
 import com.nextcloud.android.sso.exceptions.UnknownErrorException;
-import com.nextcloud.android.sso.model.FilesAppType;
+import com.nextcloud.android.sso.FilesAppTypeRegistry;
 
 import org.json.JSONException;
 
@@ -196,7 +196,7 @@ public class TipsAdapter extends RecyclerView.Adapter<TipsViewHolder> {
 
     private Optional<Intent> getOpenFilesIntent(@NonNull Context context) {
         final var pm = context.getPackageManager();
-        for (final var filesAppType : FilesAppType.values()) {
+        for (final var filesAppType : FilesAppTypeRegistry.getInstance().getTypes()) {
             try {
                 pm.getPackageInfo(filesAppType.packageId, PackageManager.GET_ACTIVITIES);
                 final var intent = pm.getLaunchIntentForPackage(filesAppType.packageId);
