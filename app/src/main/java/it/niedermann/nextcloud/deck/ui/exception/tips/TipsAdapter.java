@@ -196,7 +196,7 @@ public class TipsAdapter extends RecyclerView.Adapter<TipsViewHolder> {
 
     private Optional<Intent> getOpenFilesIntent(@NonNull Context context) {
         final var pm = context.getPackageManager();
-        for (final var filesAppType : FilesAppTypeRegistry.getInstance()) {
+        for (final var filesAppType : FilesAppTypeRegistry.getInstance().getTypes()) {
             try {
                 pm.getPackageInfo(filesAppType.packageId, PackageManager.GET_ACTIVITIES);
                 final var intent = pm.getLaunchIntentForPackage(filesAppType.packageId);

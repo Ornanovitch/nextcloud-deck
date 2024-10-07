@@ -115,7 +115,7 @@ public class AttachmentUtil {
 
         final var packageManager = context.getPackageManager();
 
-        for (final var type : FilesAppTypeRegistry.getInstance()) {
+        for (final var type : FilesAppTypeRegistry.getInstance().getTypes()) {
             try {
                 if (VersionCheckHelper.getNextcloudFilesVersionCode(context, type) > 30110000) {
                     final var intent = new Intent(Intent.ACTION_VIEW)
